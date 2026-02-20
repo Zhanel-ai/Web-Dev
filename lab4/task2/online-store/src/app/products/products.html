@@ -1,0 +1,42 @@
+<div class="products-grid">
+  <div class="card" *ngFor="let product of products">
+
+    <div class="image-container">
+      <img
+        class="main-image"
+        [src]="product.images[currentImageIndex[product.id] ?? 0]"
+        alt="{{product.name}}"
+      />
+
+      <button class="nav left" (click)="prevImage(product)">previous</button>
+      <button class="nav right" (click)="nextImage(product)">next</button>
+    </div>
+
+    <div class="thumbnails">
+      <img
+        *ngFor="let img of product.images; let i = index"
+        [src]="img"
+        class="thumb"
+        (click)="setImage(product.id, i)"
+      />
+    </div>
+
+    <h2>{{product.name}}</h2>
+    <p>{{product.description}}</p>
+    <p class="price">{{product.price}} ₸</p>
+    <div class="rating">
+  <span class="star filled" *ngFor="let s of getStars(product.rating)">★</span>
+  <span class="star empty" *ngFor="let s of getEmptyStars(product.rating)">☆</span>
+  <span class="rating-number">{{product.rating}}</span>
+</div>
+
+    <a [href]="product.link" target="_blank">
+      View on Kaspi
+    </a>
+
+    <button (click)="share(product)">
+      Share
+    </button>
+
+  </div>
+</div>

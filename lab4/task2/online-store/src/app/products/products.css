@@ -1,0 +1,69 @@
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  background: white;
+}
+
+img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.price {
+  font-weight: bold;
+  color: green;
+}
+.thumb {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 6px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.thumb:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin: 5px 0;
+}
+
+.star {
+  font-size: 18px;
+}
+
+.filled {
+  color: gold;
+}
+
+.empty {
+  color: lightgray;
+}
+
+.rating-number {
+  margin-left: 6px;
+  font-size: 15px;
+  color: #555;
+}
