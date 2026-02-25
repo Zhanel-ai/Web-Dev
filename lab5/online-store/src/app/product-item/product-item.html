@@ -1,0 +1,20 @@
+<div class="card">
+
+    <img [src]="product.images[0]" />
+
+    <h2>{{product.name}}</h2>
+    <p>{{product.description}}</p>
+    <p class="price">{{product.price}} ₸</p>
+
+    <p>⭐ {{product.rating}}</p>
+
+    <p>❤ {{product.likes}}</p>
+
+    <button (click)="like()">Like</button>
+    <button (click)="remove()">Delete</button>
+    <button (click)="share()">Share</button>
+    <button class="like-btn" [class.liked]="product.likes > 0" (click)="like()">
+        ❤ {{product.likes}}
+    </button>
+
+</div>

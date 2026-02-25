@@ -1,0 +1,33 @@
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.categories button {
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 2px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.categories button:hover {
+  background: #f2f2f2;
+}
+
+.categories button.active {
+  background: #1976d2;
+  color: white;
+  border-color: #1976d2;
+}
