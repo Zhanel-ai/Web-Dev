@@ -1,0 +1,54 @@
+<div class="container">
+  <h1>Online Store</h1>
+
+  <div class="search-container">
+    <label for="search">Search products</label>
+    <input
+      id="search"
+      type="text"
+      [(ngModel)]="searchQuery"
+      (input)="filterProducts()"
+      placeholder="Search by product name..."
+    />
+  </div>
+
+  <p class="count">
+    Showing {{ filteredProducts.length }} / {{ products.length }} products
+  </p>
+
+  <p class="no-results" *ngIf="filteredProducts.length === 0">
+    No products found
+  </p>
+
+  <div class="grid">
+    <div class="card" *ngFor="let product of filteredProducts">
+
+      <img [src]="product.image" alt="{{product.name}}" />
+
+      <h3>{{ product.name }}</h3>
+
+      <p class="description">
+        {{ product.description }}
+      </p>
+
+      <p class="price">
+        ₸ {{ product.price | number }}
+      </p>
+
+      <p class="rating">
+        ⭐ {{ product.rating }}
+      </p>
+
+      <div class="buttons">
+        <button class="view" (click)="viewProduct(product.link)">
+          View Product
+        </button>
+
+        <button class="share" (click)="shareProduct(product)">
+          Share
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
