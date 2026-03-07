@@ -1,8 +1,0 @@
-<div class="grid">
-  <div *ngFor="let photo of photos$ | async">
-    <img [src]="photo.thumbnailUrl">
-    <p>{{ photo.title }}</p>
-  </div>
-</div>
-
-<a routerLink="/albums">Back</a>
